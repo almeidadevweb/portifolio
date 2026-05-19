@@ -277,20 +277,35 @@
 
       </div>
 
-  <form
+ <form
+  class="contact-form"
   action="https://formspree.io/f/xbdblaog"
   method="POST"
->
-  <label>
-    Seu email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Sua message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Enviar mensagem</button>
+
+
+  <input
+    type="text"
+    name="name"
+    placeholder="Nome"
+    required> 
+
+  <input
+    type="email"
+    name="email"
+    placeholder="E-mail"
+    required
+  />
+
+  <textarea
+    name="message"
+    placeholder="Mensagem"
+    required
+  ></textarea>
+
+  <button type="submit" class="primary-btn">
+    Enviar mensagem
+  </button>
+
 </form>
     </div>
 
