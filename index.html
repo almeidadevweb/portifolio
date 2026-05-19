@@ -277,14 +277,26 @@
 
       </div>
 
-      <form class="contact-form" id="contactForm">
+     <form
+  class="contact-form"
+  action="https://formsubmit.co/almeidadevweb@gmail.com"
+  method="POST">
+<input type="hidden" name="_captcha" value="false">
 
-        <input type="text" placeholder="Nome" required />
+ 
+       <input
+  type="hidden"
+  name="_next"
+  value="https://SEUSITE.github.io/">
+       
+       <input type="text" name="name" placeholder="Nome" required />
 
-        <input type="email" placeholder="E-mail" required />
+<input type="email" name="email" placeholder="E-mail" required />
 
-        <textarea placeholder="Mensagem"></textarea>
-
+<textarea
+  name="message"
+  placeholder="Mensagem"
+  required> </textarea>
         <button type="submit" class="primary-btn">
           Enviar mensagem
         </button>
