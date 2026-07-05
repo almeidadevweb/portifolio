@@ -198,10 +198,9 @@ nav a:hover {
 /* CARDS */
 
 .card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 28px;
-  backdrop-filter: blur(12px);
+  width: 240px;
+  padding: 15px;
+  border-radius: 12px;
 }
 
 /* SECTIONS */
@@ -272,7 +271,11 @@ nav a:hover {
 .project-card {
   position: relative;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: 20px;
+  width: 240px;
+}
+.project-card h3 {
+  color: var(--text);
 }
 
 .project-card img {
