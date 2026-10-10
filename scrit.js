@@ -1,14 +1,16 @@
 const form = document.getElementById('contactForm')
-const successMessage = document.getElementById('successMessage')
+const messageField = document.getElementById('message')
+const whatsappNumber = '5531971493965'
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault()
+form.addEventListener('submit', (event) => {
+  event.preventDefault()
 
-  successMessage.innerText = 'Mensagem enviada com sucesso!'
+  const message = messageField.value.trim()
+  if (!message) {
+    messageField.focus()
+    return
+  }
 
-  form.reset()
-
-  setTimeout(() => {
-    successMessage.innerText = ''
-  }, 4000)
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+  window.location.assign(whatsappUrl)
 })

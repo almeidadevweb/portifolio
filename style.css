@@ -11,6 +11,12 @@
   --card: rgba(255,255,255,0.03);
 }
 
+.overlay span {
+  margin-top: 18px;
+  color: #C7D2FE;
+  font-weight: 600;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -123,7 +129,7 @@ nav a:hover {
 /* HERO */
 
 .hero {
-  min-height: 100vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -147,6 +153,7 @@ nav a:hover {
   position: relative;
   z-index: 2;
   text-align: center;
+  padding-top: 25px;
 }
 
 .badge {
@@ -192,21 +199,41 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 22px;
-  margin-top: 90px;
+  margin-top: 76px;
+}
+
+.stats .card {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.stats .card strong {
+  display: block;
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
 }
 
 /* CARDS */
 
 .card {
-  width: 240px;
-  padding: 15px;
-  border-radius: 12px;
+  width: 100%;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--card);
 }
 
 /* SECTIONS */
 
 .section {
   padding: 120px 0;
+  scroll-margin-top: 96px;
+}
+
+.section:nth-of-type(even) {
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
 }
 
 .section-title {
@@ -239,6 +266,7 @@ nav a:hover {
 .service-card {
   padding: 40px;
   transition: 0.4s;
+  width: auto;
 }
 
 .service-card:hover {
@@ -264,16 +292,29 @@ nav a:hover {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: minmax(0, 260px);
   gap: 28px;
+  justify-content: start;
+  margin-right: auto;
+}
+
+#projects .section-title {
+  margin-bottom: 32px;
+  text-align: center;
 }
 
 .project-card {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  width: 240px;
+  width: 100%;
+  aspect-ratio: 1;
+  display: block;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  background: var(--bg-secondary);
 }
+
 .project-card h3 {
   color: var(--text);
 }
@@ -292,7 +333,7 @@ nav a:hover {
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.65);
+  background: linear-gradient(180deg, transparent 10%, rgba(5,5,10,0.9) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -318,9 +359,13 @@ nav a:hover {
 
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 70px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.8fr);
+  gap: 80px;
   align-items: center;
+}
+
+.about-copy {
+  max-width: 620px;
 }
 
 .about-text {
@@ -329,16 +374,68 @@ nav a:hover {
   margin-top: 24px;
 }
 
-.about-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+.about-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
 }
 
-.mini-card {
-  padding: 36px;
-  font-size: 1.1rem;
-  font-weight: 600;
+.about-highlights span {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: #D4D4E3;
+  font-size: 0.88rem;
+}
+
+.about-photo {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 28px;
+  background: var(--bg-secondary);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+}
+
+.about-photo::after {
+  content: "";
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(transparent, rgba(5,5,10,0.88));
+  pointer-events: none;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.about-photo figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 26px;
+  bottom: 26px;
+  left: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.about-photo figcaption span {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.about-photo figcaption small {
+  color: var(--text-secondary);
 }
 
 /* CONTACT */
@@ -352,10 +449,13 @@ nav a:hover {
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--card);
 }
 
-.contact-form input,
 .contact-form textarea {
   background: rgba(255,255,255,0.04);
   border: 1px solid var(--border);
@@ -366,9 +466,34 @@ nav a:hover {
   outline: none;
 }
 
+.contact-form label {
+  font-weight: 600;
+}
+
 .contact-form textarea {
-  resize: none;
-  min-height: 160px;
+  resize: vertical;
+  min-height: 190px;
+  line-height: 1.6;
+}
+
+.contact-form textarea:focus {
+  border-color: rgba(129,140,248,0.7);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+}
+
+.contact-hint {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.contact-form .primary-btn {
+  align-self: flex-start;
+  background: #168A55;
+}
+
+.contact-form .primary-btn:hover {
+  background: #1AA866;
 }
 
 /* FOOTER */
@@ -401,26 +526,72 @@ footer p {
 
 @media (max-width: 768px) {
 
-  nav,
   .nav-content .primary-btn {
     display: none;
+  }
+
+  .nav-content {
+    min-height: 76px;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 12px 0;
+    gap: 12px;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 4px;
+  }
+
+  nav a {
+    font-size: 0.82rem;
   }
 
   .hero-buttons {
     flex-direction: column;
   }
 
+  .hero-buttons a {
+    text-align: center;
+  }
+
   .hero h1 {
     letter-spacing: -1px;
   }
 
-  .about-cards {
+  .about-grid {
     grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .about-photo {
+    min-height: 360px;
+  }
+
+  .about-photo img {
+    min-height: 360px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .contact-form {
+    padding: 22px;
   }
 
   .footer-content {
     flex-direction: column;
     gap: 20px;
     text-align: center;
+  }
+}
+
+@media (hover: none) {
+  .project-card .overlay {
+    opacity: 1;
   }
 }

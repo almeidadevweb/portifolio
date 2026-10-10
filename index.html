@@ -5,9 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Almeida|DevOps</title>
+  <title>Anderson Almeida | Desenvolvedor Web</title>
 
   <link rel="stylesheet" href="style.css" />
+  <script src="scrit.js" defer></script>
 </head>
 
 <body>
@@ -73,15 +74,18 @@
       <div class="stats">
 
         <div class="card">
-          20+ Projetos entregues
+          <strong>10+</strong>
+          Projetos entregues
         </div>
 
         <div class="card">
-          100% Clientes satisfeitos
+          <strong>100%</strong>
+          Clientes satisfeitos
         </div>
 
         <div class="card">
-          72h Prazo médio
+          <strong>96h</strong>
+          Prazo médio
         </div>
 
       </div>
@@ -145,68 +149,14 @@
 
       <div class="projects-grid">
 
-        <div class="project-card">
-
-         <img
-            src="assets/CEO.png"
-          
-            alt="Projeto"
-          />
-
-         <a href="https://77artes-site.vercel.app/" target="_blank" class="portfolio-link">
-    <div class="overlay">
-        <h3>77Artes</h3>
-        <p>Landing Page</p>
-    </div>
-</a>
-       
-<!--
-</div>
-
-        <div class="project-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop"
-            alt="Projeto"
-          />
-
+        <a href="https://77artes-site.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card">
+          <img src="assets/CEO.png" alt="Prévia do site 77Artes" />
           <div class="overlay">
-            <h3>Ana Beatriz Photo</h3>
-            <p>Portfólio</p>
+            <h3>77Artes</h3>
+            <p>Landing page</p>
+            <span>Ver projeto ↗</span>
           </div>
-
-        </div>
-
-        <div class="project-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
-            alt="Projeto"
-          />
-
-          <div class="overlay">
-            <h3>Academia Fit Pro</h3>
-            <p>Institucional</p>
-          </div>
-
-        </div>
-
-        <div class="project-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1600&auto=format&fit=crop"
-            alt="Projeto"
-          />
-
-         <a href="https://77artes-site.vercel.app/" target="_blank" class="portfolio-link">
-    <div class="overlay">
-        <h3>77Artes</h3>
-        <p>Landing Page</p>
-    </div> -->
-          
-</a>
-
-        </div>
+        </a>
 
       </div>
 
@@ -219,43 +169,35 @@
   <section id="about" class="section">
 
     <div class="container about-grid">
-
-      <div>
+      <div class="about-copy">
 
         <div class="section-title left">
           <span>Sobre mim</span>
 
           <h2>
-            Sites modernos que ajudam marcas a crescer.
+            Tecnologia e criatividade para tirar boas ideias do papel.
           </h2>
         </div>
 
         <p class="about-text">
-          Sou desenvolvedor freelancer focado na criação
-          de experiências digitais modernas, rápidas e estratégicas.
+          Meu nome é Anderson Almeida. Sou desenvolvedor freelancer e gosto de transformar ideias em experiências digitais claras, úteis e bem construídas. Trabalho próximo de cada cliente para entender seus objetivos e criar sites modernos, responsivos e pensados para fortalecer sua presença online.
         </p>
 
-      </div>
-
-      <div class="about-cards">
-
-        <div class="card mini-card">
-          Código limpo
-        </div>
-
-        <div class="card mini-card">
-          Design moderno
-        </div>
-
-        <div class="card mini-card">
-          Entrega rápida
-        </div>
-
-        <div class="card mini-card">
-          Comunicação clara
+        <div class="about-highlights">
+          <span>✦ Atendimento próximo</span>
+          <span>✦ Soluções sob medida</span>
+          <span>✦ Foco em resultados</span>
         </div>
 
       </div>
+
+      <figure class="about-photo">
+        <img src="Anderson%20Perfil.jpeg" alt="Anderson Almeida, desenvolvedor freelancer" />
+        <figcaption>
+          <span>Anderson Almeida</span>
+          <small>Desenvolvedor freelancer</small>
+        </figcaption>
+      </figure>
 
     </div>
 
@@ -278,43 +220,24 @@
         </div>
 
         <p class="about-text">
-          Me conte sobre seu projeto e vamos transformar sua ideia
-          em um site moderno e profissional.
+          Escreva um pouco sobre o que você precisa. Sua mensagem será aberta no WhatsApp para continuarmos a conversa.
         </p>
 
       </div>
 
-<form
-  class="contact-form"
-  action="https://formspree.io/f/xbdblaog"
-  method="POST"
->
-
-  <input
-    type="text"
-    name="name"
-    placeholder="Nome"
-    required
-  />
-
-  <input
-    type="email"
-    name="email"
-    placeholder="E-mail"
-    required
-  />
-
-  <textarea
-    name="message"
-    placeholder="Mensagem"
-    required
-  ></textarea>
-
-  <button type="submit" class="primary-btn">
-    Enviar mensagem
-  </button>
-
-</form>
+      <form class="contact-form" id="contactForm">
+        <label for="message">Sua mensagem</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Olá, Anderson! Gostaria de conversar sobre um projeto..."
+          required
+        ></textarea>
+        <p class="contact-hint">Você será direcionado ao WhatsApp com a mensagem preenchida.</p>
+        <button type="submit" class="primary-btn">
+          Enviar pelo WhatsApp <span aria-hidden="true">↗</span>
+        </button>
+      </form>
     </div>
 
   </section>
